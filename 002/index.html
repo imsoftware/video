@@ -101,15 +101,64 @@
 		 height: 20px;
 		}
 
-	  </style>   
+		/* http://www.alessioatzeni.com/blog/simple-tooltip-with-jquery-only-text/ */
+
+		.newtooltip {
+			display:none;
+			position:absolute;
+			border:1px solid #333;
+			background-color:#161616;
+			border-radius:5px;
+			padding:10px;
+			color:#fff;
+			font-size:12px Arial;
+		}
+
+	  </style>
+	  <script type="text/javascript">
+		$(document).ready(function() {
+		        // Tooltip only Text
+		        $('.masterTooltip').hover(function(){
+		                // Hover over code
+		                var title = $(this).attr('title');
+		                $(this).data('tipText', title).removeAttr('title');
+		                $('<p class="newtooltip"></p>')
+		                .text(title)
+		                .appendTo('body')
+		                .fadeIn('slow');
+		        }, function() {
+		                // Hover out code
+		                $(this).attr('title', $(this).data('tipText'));
+		                $('.newtooltip').remove();
+		        }).mousemove(function(e) {
+		                var mousex = e.pageX + 20; //Get X coordinates
+		                var mousey = e.pageY + 10; //Get Y coordinates
+		                $('.newtooltip')
+		                .css({ top: mousey, left: mousex })
+		        });
+		});
+	</script>
     </head>
     <body>
+
+
+<a href="#" title="This will show up in the tooltip" class="masterTooltip">Your Text</a>
+<p title="Mouse over the heading above to view the tooltip." class="masterTooltip">Mouse over the heading text above to view it's tooltip.</p>
+<img src="image.jpg" class="masterTooltip" title="Tooltip on image" />
+
 		<h2 id="logo">Heading</h2>
 	    <div class="container-fluid">
 	        <div class="row-fluid">
 	            <div class="vidsidebar span4">
 	                <!--Sidebar content-->
 	                <a class="btn btn-large">Kommentieren <i class="icon-arrow-right"></i></a> 
+
+					<div class="popover fade left in" style="top: 5.5px; left: 415px; display: block; position: relative;">
+						<div class="arrow"></div>
+						<h3 class="popover-title">Popover on right</h3>
+						<div class="popover-content">Vivamus sagittis lacus vel augue laoreet rutrum faucibus. DEF</div>
+					</div>
+
 	            </div>
 	        	<div class="span4">
 	    			<!--Body content-->
@@ -133,13 +182,6 @@
 	    <section class="vidcom vidcom1 com1">111</section>
 	    <section class="vidcom vidcom2 com1">222</section>
 	    <section class="vidcom vidcom3 com1">333</section>
-
-	    <a class="btn" title="" data-content="Vivamus sagittis lacus vel augue laoreet rutrum faucibus." data-placement="right" data-toggle="popover" href="#" data-original-title="Popover on right">Popover on right</a>
-		<div class="popover fade right in" style="top: 5.5px; left: 415px; display: block;">
-			<div class="arrow"></div>
-			<h3 class="popover-title">Popover on right</h3>
-			<div class="popover-content">Vivamus sagittis lacus vel augue laoreet rutrum faucibus.</div>
-		</div>
 
      </div> 
     </body>
