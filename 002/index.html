@@ -45,12 +45,18 @@
 		
 		/* Bootstrap custom */
 		
-		body {
-		 padding: 40px;
+		.container-fluid {
+			text-align: center;
 		}
-		
-		.hero-unit {
-		  text-align: center;
+
+		/* DEV */
+
+		.span4 {
+		 background: red;
+		}
+
+		.span4 {
+			background:blue;
 		}
 		
 		/* Scaffholding */
@@ -61,54 +67,58 @@
 		/* vidcom */
 		
 		#video {
-		 background: #000;
-		 display: inline;
+			background: #000;
+			left: 50%;
+			margin: 30px -426.4px auto;
+			position: absolute;
+		}
+
+		.vidsidebar {
+			height: 540px
 		}
 		
 		.vidcom1 {
 		 background:red; 
-		 width: 100px; 
+		 width: 40px; 
 		 height: 20px;
 		}
 		.vidcom2 {
 		 background:blue; 
-		 width: 100px; 
+		 width: 40px; 
 		 height: 20px;
 		}
-		.vidbtn {
-		 background: red;
-		 height: 480px;
-		 width: 300px;
-		}
-		.vidbtn a {
-		 display: inline;
-		}
-		
-		
+
+
 	  </style>   
     </head>
     <body>
-	 <div class="container-fluid">
-	  <h2 id="logo">Heading</h2>
-	  
-	  <div class="hero-unit">
-       <h1>Heading</h1>
-       <section class="vidbtn floatleft">
-        <a class="btn btn-large">Kommentieren <i class="icon-arrow-right"></i></a> 
-       </section>
-	   <video id="video" width="853" height="480" preload="auto" autobuffer controls poster="http://videos.mozilla.org/serv/webmademovies/popcornposter.png">
-        <source src="http://video.phpress.de/video2.ogv" type="video/ogg">
-       </video>
-       <section class="vidbtn floatright">
-	    <a class="btn btn-large"><i class="icon-arrow-left"></i> Kommentieren</a> 
-       </section>
-	   <p>Tagline</p>
-      </div>
-
-      <p>Normal</p>
+		<h2 id="logo">Heading</h2>
+	    <div class="container-fluid">
+		    <h1>Heading</h1>
+	        <div class="row-fluid">
+	            <div class="span4 vidsidebar">
+	                <!--Sidebar content-->
+	                <a class="btn btn-large">Kommentieren <i class="icon-arrow-right"></i></a> 
+	            </div>
+	        	<div class="span4">
+	    			<!--Body content-->
+	    			<figure>
+			  		 	<video id="video" width="853" height="480" preload="auto" autobuffer controls poster="http://videos.mozilla.org/serv/webmademovies/popcornposter.png">
+			   				<source src="http://video.phpress.de/video2.ogv" type="video/ogg">
+			   			</video>
+			   			<p>Beschreibung des tollen Videos 12 34 56</p>
+			   		</figure>
+	    		</div>
+	        	<div class="span4 vidsidebar">
+	    			<!--Sidebar content-->
+		 			<a class="btn btn-large"><i class="icon-arrow-left"></i> Kommentieren</a> 
+	    		</div>
+	    	</div>
+	    </div>
       <section class="vidcom vidcom1 com1">111</section>
       <section class="vidcom vidcom2 com1">222</section>
       <section class="vidcom vidcom3 com1">333</section>
+
 
      </div> 
     </body>
