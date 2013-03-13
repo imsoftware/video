@@ -16,6 +16,9 @@
 		<script src="popcorn-complete.js"></script>
 		<script src="popcorn.comments.js"></script>
 		<script>
+			
+			// Popcorn.js
+
 			document.addEventListener( "DOMContentLoaded", function() {
 
 			// create our popcorn instance
@@ -36,6 +39,8 @@
 
 			}, false );
 			
+			// jQuery
+
 			window.onload = function() {
 				$(".vidcom").fadeTo("normal", 0.11);
 				$(".btn-large").popover('show');
@@ -61,7 +66,7 @@
 
 		/* DEV */
 
-		.span4 {
+		.newspan6 {
 			background: #ccc;
 			height: 600px;
 		}
@@ -78,6 +83,7 @@
 			left: 50%;
 			margin: 0 -426.4px auto;
 			position: absolute;
+			z-index: -1;
 		}
 
 		.vidsidebar {
@@ -175,9 +181,8 @@
 <img src="image.jpg" class="masterTooltip" title="Tooltip on image" />
 
 		<h2 id="logo">Heading</h2>
-	    <div class="container-fluid">
-	        <div class="row-fluid">
-	            <div class="vidsidebar span4">
+
+	            <div class="vidsidebar newspan6">
 	                <!--Sidebar content-->
 	                <a class="btn btn-large">Kommentieren <i class="icon-arrow-right"></i></a> 
 
@@ -191,14 +196,14 @@
 						<h3 class="popover-title">Popover on right</h3>
 						<div class="popover-content">Vivamus sagittis lacus vel augue laoreet rutrum faucibus. DEF</div>
 					</div>
-					<div class="popover fade left in" style="top: 555px; left: 155px; display: block; position: absolute;">
+					<div class="popover fade left in" style="top: 505px; left: 155px; display: block; position: absolute;">
 						<div class="arrow"></div>
 						<h3 class="popover-title">Popover on right</h3>
 						<div class="popover-content">Vivamus sagittis lacus vel augue laoreet rutrum faucibus. DEF</div>
 					</div>
 
 	            </div>
-	        	<div class="span4">
+	        	<div class="vidcontainer">
 	    			<!--Body content-->
 	    			<figure>
 		    			<h1>Heading</h1>
@@ -210,7 +215,7 @@
 			   			</figcaption>
 			   		</figure>
 	    		</div>
-	        	<div class="span4 vidsidebar">
+	        	<div class="vidsidebar span6">
 	    			<!--Sidebar content-->
 		 			<a class="btn btn-large"><i class="icon-arrow-left"></i> Kommentieren</a> 
 	    		</div>
