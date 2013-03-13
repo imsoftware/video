@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Bootstrap 101 Template</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		
+		<!-- Bootstrap -->
+		<link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
+		<script src="js/bootstrap.min.js"></script>
+				
+		<!-- JS -->	
+	    <script src="jquery.js"></script>
+		<script src="popcorn-complete.js"></script>
+		<script src="popcorn.comments.js"></script>
+		<script>
+			document.addEventListener( "DOMContentLoaded", function() {
+
+			// create our popcorn instance
+			var p = Popcorn( "#video" )
+			// play the video
+			.play()
+			// set the volume to zero
+			.code({ 
+				start: 1,
+				end: 3,
+				onStart: function( options ) { 
+					$(".vidcom1").fadeTo("normal", 0.99);
+				},
+				onEnd: function( options ) { 
+					$(".vidcom1").fadeTo("slow", 0.22);
+				}
+			})
+
+			}, false );
+			
+			window.onload = function() {
+				$(".vidcom").fadeTo("normal", 0.11);
+			};
+			
+      </script>
+	  <style type="text/css">
+		
+		// Bootstrap custom
+		
+		body {
+		 padding: 40px;
+		}
+		
+		.hero-unit {
+		  text-align: center;
+		}
+		
+		// Scaffholding
+		
+		.floatleft { float: left; }
+		.floatright { float: right; }
+		
+		// vidcom
+		
+		#video {
+		 background: #000;
+		 display: inline;
+		}
+		
+		.vidcom1 {
+		 background:red; 
+		 width: 100px; 
+		 height: 20px;
+		}
+		.vidcom2 {
+		 background:blue; 
+		 width: 100px; 
+		 height: 20px;
+		}
+		.vidbtn {
+		 display: inline;
+		 height: 480px;
+		 width: 200px !important;
+		}
+		.vidbtn a {
+		 margin-top: -480px;
+		}
+		
+	  </style>   
+    </head>
+    <body>
+	 <div class="container-fluid">
+	  <h2 id="logo">Heading</h2>
+	  
+	  <div class="hero-unit">
+       <h1>Heading</h1>
+       <section class="vidbtn">
+        <a class="btn btn-large">Kommentieren <i class="icon-arrow-right"></i></a> 
+       </section>
+	   <video id="video" width="853" height="480" preload="auto" autobuffer controls poster="http://videos.mozilla.org/serv/webmademovies/popcornposter.png">
+        <source src="http://video.phpress.de/video2.ogv" type="video/ogg">
+       </video>
+       <section class="vidbtn">
+	    <a class="btn btn-large"><i class="icon-arrow-left"></i> Kommentieren</a> 
+       </section>
+	   <p>Tagline</p>
+      </div>
+
+      <p>Normal</p>
+      <section class="vidcom vidcom1 com1">111</section>
+      <section class="vidcom vidcom2 com1">222</section>
+      <section class="vidcom vidcom3 com1">333</section>
+
+     </div> 
+    </body>
+  </html>
